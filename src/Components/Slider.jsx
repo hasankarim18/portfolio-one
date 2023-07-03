@@ -13,14 +13,6 @@ const Slider = () => {
 
   return (
     <div className="slider-container">
-      {/* <div className="grid grid-cols-2"> */}
-      {/* controls */}
-      {/* <Controls currentPage={currentPage} handleMenuClick={handleMenuClick} /> */}
-
-      {/* pages */}
-      {/* <PageContainers currentPage={currentPage} /> */}
-      {/* </div> */}
-
       <div className="drawer">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content relative z-10">
@@ -34,13 +26,13 @@ const Slider = () => {
             </label>
           </div>
           <div className="flex relative z-10">
-            <div className="hidden md:block w-80   h-screen text-white  ">
+            <div className="hidden md:block w-60 relative z-10  h-screen text-white  ">
               <Controls
                 currentPage={currentPage}
                 handleMenuClick={handleMenuClick}
               />
             </div>
-            <div className="w-full">
+            <div className="w-full relative z-0">
               <PageContainers currentPage={currentPage} />
             </div>
           </div>
@@ -48,7 +40,7 @@ const Slider = () => {
         {/*  */}
         <div className="drawer-side z-20">
           <label htmlFor="my-drawer" className="drawer-overlay bg-black text-white "></label>
-          <ul className="menu w-80 h-full text-inherit ">           
+          <ul className=" w-60 p-0 h-full text-inherit ">           
             <Controls
               currentPage={currentPage}
               handleMenuClick={handleMenuClick}

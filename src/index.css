@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+@layer components{
+    body{
+        @apply text-textLight;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        @apply text-textBlack
+    }
+
+
+    .control-menu{
+        @apply flex flex-col gap-4 ;
+    }
+
+    .control_menu_item{
+        @apply text-gray-400 tracking-wide p-2 border-b-gray-600 border border-transparent ;
+        font-size: 16px;
+    }
+
+    .control_menu_item a {
+        @apply flex items-center justify-start gap-2 uppercase hover:text-white;
+    }
+    .control_menu_item a span{
+        @apply text-xl p-0 m-0;
+    }
+
+    .control_menu_item.active{
+     @apply text-white;
+    
+    }
+
+    .social li a{
+            @apply text-xl;
+    }
+}

@@ -1,19 +1,29 @@
-import { motion } from "framer-motion";
+
+import { FaLaptopCode } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 
 const Portfolio = () => {
     const location = useLocation();
   return (
-    <motion.div
-      key={location.pathname}
-      transition={{ duration: 0.75 }}
-      initial={{ opacity: 0, y: "100vh" }}
-      animate={{ opacity: 1, y: "0" }}
-      exit={{ opacity: 0, y: "-100vh" }}
-      className="h-screen bg-red-200"
-    >
-      Portfolio
-    </motion.div>
+    <div key={location.pathname} className="h-screen bg-white">
+      <div className="p-8">
+        <div
+          style={{
+            borderBottom: "1px dotted #00A3E1",
+          }}
+          className="flex justify-between items-center "
+        >
+          <h2 className="text-3xl text-paste font-bold">Portfolio</h2>
+          <div className="text-paste text-2xl">
+            <FaLaptopCode />
+          </div>
+        </div>
+        {/* body */}
+        <div className="mt-8">
+          
+        </div>
+      </div>
+    </div>
   );
 };
 
