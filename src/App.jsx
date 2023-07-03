@@ -1,16 +1,22 @@
 
+
 import './App.css'
+
+import Slider from './Components/Slider';
+
 
 function App() {
 
 
   return (
     <>
-     <div className="container mx-auto" >
-        <h3 className="text-3xl">React, Vite, Tailwind Stater template</h3>
-     </div>
+      <div className=" mx-auto">          
+       
+          <Slider />
+       
+      </div>
     </>
-  )
+  );
 }
 
 export default App
