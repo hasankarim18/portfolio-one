@@ -13,7 +13,7 @@ const SKILLS = [
   { type: "PHP", level: 50 },
 ];
 
-const SkillBar = ({ animateSkill }) => {
+const SkillBar = () => {
   
 
     return (
@@ -21,20 +21,15 @@ const SkillBar = ({ animateSkill }) => {
         <ul className="skills">
           {SKILLS.map((skill) => {
            
-            let animateClass;
-            if (animateSkill) {
-              animateClass = `w-[${skill.level}%]`;
-            } else {
-              animateClass = `w-0`;
-            }
+           
 
             return (
               <li className="mb-8" key={skill.type}>
                 <span className="text-paste">{skill.type}</span>
                 <div className="w-full bg-white h-4 relative flex">
                   <div
-                    // style={{width:`${skill.level}%`}}
-                    className={`bg-paste transition-all delay-1000 duration-1000  relative  ${animateClass}`}
+                    style={{width:`${skill.level}%`}}
+                    className={`bg-paste transition-all delay-1000 duration-1000  relative  `}
                   >
                     <TalkShape className="absolute -top-8 right-0 text-white">
                       {skill.level}%

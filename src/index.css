@@ -39,4 +39,16 @@
     .social li a{
             @apply text-xl;
     }
+
+
+    .portfolio_image{
+    background-size: cover;
+      background-position:top;
+      transition: all;
+      transition-duration: 1s;
+
+    }
+    .portfolio_image:hover {
+        background-position: bottom;
+    }
 }
