@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { FaLaptopCode } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
+import BasicModal from "../utils/BasicModal";
+import PortFolioDetails from "../utils/PortFolioDetails";
 
 const portFolioList = [
   {
@@ -21,6 +24,7 @@ const portFolioList = [
       "Node",
     ],
     image: "/images/site-1.png",
+    live: "https://linguacampa.web.app/",
   },
   {
     id: 2,
@@ -41,6 +45,7 @@ const portFolioList = [
       "Node",
     ],
     image: "/images/site-2.png",
+    live: "https://actionpals-aa2f0.web.app/",
   },
   {
     id: 3,
@@ -61,11 +66,23 @@ const portFolioList = [
       "Node",
     ],
     image: "/images/site-3.png",
+    live: "https://spicenirvana-f6fb2.web.app/",
   },
 ];
 
 const Portfolio = () => {
+
+  const [open, setOpen] = useState(false)
+
   const location = useLocation();
+
+  const handleOpen = ()=> {
+    setOpen(true)
+  }
+  const handleClose = ()=> {
+    setOpen(false)
+  }
+
   return (
     <div key={location.pathname} className="h-screen bg-white">
       <div className="p-8">
@@ -105,10 +122,25 @@ const Portfolio = () => {
                   <div className="card-body">
                     <h2 className="card-title">{item.title}</h2>
                     <p>{item.theme}</p>
-                    <div className="card-actions justify-end">
-                      <button className="bg-paste text-white py-2 px-4 rounded-xl border-paste border-2 hover:bg-transparent hover:text-paste transition-all duration-500">
+                    <div className="card-actions justify-between">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href={item.live}
+                        className="bg-red-400 text-white py-2 px-4 rounded-xl border-red-400 border-2 hover:bg-transparent hover:text-red-400 transition-all duration-500"
+                      >
+                        Live Link
+                      </a>
+                      <button 
+                       onClick={handleOpen}
+                       className="bg-paste text-white py-2 px-4 rounded-xl border-paste border-2 hover:bg-transparent hover:text-paste transition-all duration-500">
                         View Details
                       </button>
+                      {/* modal body */}
+                      <BasicModal open={open} handleClose={handleClose}  > 
+                          <PortFolioDetails item={item} />
+                      </BasicModal>
+                      {/* modal body */}
                     </div>
                   </div>
                 </div>
